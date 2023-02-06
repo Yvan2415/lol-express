@@ -1,5 +1,4 @@
 const { Schema } = require('mongoose')
-
 const base = require('../base')
 
 const User = new Schema({
@@ -10,7 +9,7 @@ const User = new Schema({
 	telephone: String,
 	nickname: String,
 	sex: Number, // 0, 1 / 男， 女
-	...base.TimeSchema
+	...base.timeSchema.obj
 })
 
 module.exports = {

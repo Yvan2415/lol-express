@@ -34,6 +34,7 @@ async function userInfo(req, res, next){
   res._data = list[0]
   next()
 }
+
 /**
  * @description 用户更新
  */
@@ -47,9 +48,21 @@ async function update(req, res, next){
   next()
 }
 
+/**
+ * @description 删除用户
+ */
+async function deleteUser(req, res, next){
+  const id = req.params.id
+  let result = await Users.deleteOne({ _id: id })
+  res._message = '删除成功'
+  console.log(result)
+  next()
+}
+
 module.exports = {
   register,
   list,
   userInfo,
-  update
+  update,
+  deleteUser
 }

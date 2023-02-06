@@ -11,8 +11,9 @@ function uniReturn(req, res, next){
     res._message && (resData._message = res._message)
     res._data && (resData._data = res._data)
     res.status(200).json(resData)
+  } else {
+    next()
   }
-  next()
 }
 
 module.exports = {

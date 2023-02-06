@@ -4,7 +4,8 @@ const {
   register,
   list,
   userInfo,
-  update
+  update,
+  deleteUser
 } = require('../controller/user')
 
 
@@ -14,8 +15,10 @@ router.post('/register', register);
 router.get('/list', list);
 // 获取用户信息
 router.get('/:id', userInfo);
-// 获取用户信息
+// 更新用户信息
 router.post('/update/:id', update);
+// 删除用户
+router.delete('/del/:id', deleteUser);
 
 
 module.exports = router;
